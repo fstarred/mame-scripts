@@ -11,7 +11,7 @@ A set of scripts to automate tasks such as download and install of mame files
 
 ### Usage
 
-_getmame.bat_ <version>
+_getmame.bat_ \<mameversion\>
 
 ### Editable variables
 
@@ -32,7 +32,7 @@ set luaexe=<lua executable filename>
   
 ### Usage
 
-_getroms.bat_ <romname>
+_getroms.bat_ \<romname\>
   
 ### Editable variables
 
