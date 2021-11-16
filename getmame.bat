@@ -4,16 +4,19 @@ set outdir=D:\Emulators
 set curdir=d:\emulators\mame
 set zipcmd=7za.exe
 set luadir=d:\lua
-set luaexe=lua54.exe
+set luaexe=lua53.exe
 
 if "%~1"=="" goto errparam
 
 set url=%url%/mame%1
 set file=mame%1b_64bit.exe
 
-powershell.exe -command "& Invoke-WebRequest -Uri %url%/%file% -O %outdir%\%file% -UseBasicParsing"
+if not exist %outdir%\%file% (
+	echo downloading mame %1...
+	powershell.exe -command "& Invoke-WebRequest -Uri %url%/%file% -O %outdir%\%file% -UseBasicParsing"
+) 
 
-echo "extracting..."
+echo extracting...
 
 %zipcmd% x %outdir%\%file% -o%outdir%\mame%1 -r
 
@@ -32,6 +35,13 @@ start /D %outdir%\mame%1 /WAIT /B mame.exe -cc
 echo modifying mame ini values
 
 %luadir%\%luaexe% %curdir%\set_ini.lua %1
+
+if exist %curdir%\default.cfg (
+	echo copying default.cfg...
+	copy %curdir%\default.cfg %outdir%\mame%1\cfg\
+) else (
+	echo warning: no default.cfg file found
+)
 
 :exitprog
 exit /B 0
