@@ -10,5 +10,5 @@ powershell.exe -command "& Invoke-WebRequest -Uri %cabinets_url%%1%fileext% -O %
 exit /B 0
 
 :errparam
-echo "usage: %~n0 <data>"
+echo "usage: %~n0 <romname>"
 exit /B 1
