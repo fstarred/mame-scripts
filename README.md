@@ -13,6 +13,15 @@ A set of scripts to automate tasks such as download and install of mame files
 
 _getmame.bat_ \<mameversion\>
 
+### Features
+
+1. Download mame from given url
+2. Extract mame archived file to output directory
+3. Generate mame executable shortcut file
+4. Generate mame.ini and write entries taken from paths.lua
+5. Generate ui.ini and write entries taken from paths.lua
+6. Copy default.cfg (if exists) from script directory to mame dir
+
 ### Editable variables
 
 ```  
@@ -23,7 +32,11 @@ set zipcmd=7za.exe
 set luadir=<lua installation path>
 set luaexe=<lua executable filename>
 ```
-  
+
+### Notes
+
+In case mame archived file is already present in output directory, download step is skipped
+
 ## Download roms
   
 ### Requirements
@@ -33,7 +46,11 @@ set luaexe=<lua executable filename>
 ### Usage
 
 _getroms.bat_ \<romname\>
-  
+
+### Features
+
+Download _romname_ from url
+
 ### Editable variables
 
 ```
@@ -51,6 +68,10 @@ set outdir=D:\Emulators\mame\roms
 ### Usage
 
 _getdata.bat_ \<romname\>
+
+### Features
+
+Download _romname_ data (ex. cabinet images) from url
   
 ### Editable variables
 
