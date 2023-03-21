@@ -25,13 +25,24 @@ _getmame.bat_ \<mameversion\>
 ### Editable variables
 
 ```  
-set url=https://github.com/mamedev/mame/releases/download
-set outdir=
-set curdir=
-set zipcmd=7za.exe
+set url=<url_of_mame_releseas>
+set outdir=<root_destination_path_of_mame>
+set curdir=<path_dir_of_this_script>
+set zipcmd=<zip_command_executable>
 set luadir=<lua installation path>
 set luaexe=<lua executable filename>
 ```
+
+example:
+
+```  
+set url=https://github.com/mamedev/mame/releases/download
+set outdir=D:\software
+set curdir=D:\Software\mame-scripts-main
+set zipcmd=7zr.exe
+set luadir=D:\Software\lua
+set luaexe=lua54.exe
+```  
 
 ### Notes
 
