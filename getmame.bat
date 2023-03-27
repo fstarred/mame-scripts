@@ -1,6 +1,7 @@
 @echo off
 set url=https://github.com/mamedev/mame/releases/download
-set mamebasedir=D:\Emulators
+set mamebasedir=d:\Emulators
+set downloaddir=%mamebasedir%\downloads
 set mameworkdir=d:\emulators\mame
 set zipcmd=7zr.exe
 set luadir=d:\lua
@@ -11,14 +12,18 @@ if "%~1"=="" goto errparam
 set url=%url%/mame%1
 set file=mame%1b_64bit.exe
 
-if not exist %mamebasedir%\%file% (
+if not exist %downloaddir% (
+	mkdir %downloaddir%
+)
+
+if not exist %downloaddir%\%file% (
 	echo downloading mame %1...
-	powershell.exe -command "& Invoke-WebRequest -Uri %url%/%file% -O %mamebasedir%\%file% -UseBasicParsing"
+	powershell.exe -command "& Invoke-WebRequest -Uri %url%/%file% -O %downloaddir%\%file% -UseBasicParsing"
 ) 
 
 echo extracting...
 
-%zipcmd% x %mamebasedir%\%file% -o%mamebasedir%\mame%1 -r -aos
+%zipcmd% x %downloaddir%\%file% -o%mamebasedir%\mame%1 -r -aos
 
 echo creating link to public desktop
 
