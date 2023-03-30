@@ -1,9 +1,11 @@
 --[[
     This lua script replace mame.ini entries with new ones, as declared on t table
 ]]
+
 require "io"
 require "os"
-require "paths"
+--require "paths"
+dofile("d:\\software\\mame-scripts-main\\paths.lua")
 
 if not arg[1] then
 	print("argument version missing\nUsage:\n" .. arg[0] .. " <version>\nExample:\n" .. arg[0] .. " 0232")
@@ -11,8 +13,8 @@ if not arg[1] then
 end
 
 local mame_ver = arg[1]
-
 local mame_dir = mame_basedir .. '\\mame' .. mame_ver
+local workingdir = ''
 
 local function update_ini(filename, tbl)
     local handle = io.open(filename .. '.tmp', "w+")
