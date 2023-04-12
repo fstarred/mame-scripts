@@ -87,8 +87,12 @@ Download _romname_ data (ex. cabinet images) from url
 ### Editable variables
 
 ```
-set cabinets_url=https://archive.org/download/mamecabinets202fullset/Cabinets.zip/Cabinets%%2F
+set cabinets_url=https://archive.org/download/mame-support/Support/Cabinets/cabinets.zip/
+set cpanel_url=https://archive.org/download/mame-support/Support/CPanel/cpanel.zip/
+set snap_url=https://archive.org/download/mame-support/Support/Snaps/snap.zip/
 set fileext=.png
-set outdir=D:\Emulators\mame\cabinets
+set cabinets_dir=D:\Emulators\mame\cabinets
+set cpanels_dir=D:\Emulators\mame\cpanels
+set snap_dir=D:\Emulators\mame\snap
 ```
   
