@@ -70,7 +70,7 @@ set fileext=.zip
 set outdir=D:\Emulators\mame\roms
 ```  
   
-## Download data (cabinets so far)
+## Download data (snap, cabinets, panels)
 
 ### Requirements
 
@@ -82,7 +82,7 @@ _getdata.bat_ \<romname\>
 
 ### Features
 
-Download _romname_ data (ex. cabinet images) from url
+Download _romname_ data from url
   
 ### Editable variables
 
